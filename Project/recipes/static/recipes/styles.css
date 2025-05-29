@@ -1,0 +1,145 @@
+html {
+    font-family: 'Roboto', sans-serif;
+    font-weight: normal;
+    color: black;
+    font-size: 16px;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    display: grid;
+    grid-template-rows: 2fr;
+    margin: auto;
+    padding: 32px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    border-radius: 32px;
+    width: 60%;
+    overflow: hidden;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    margin: 0;
+    padding: 0 16px;
+    align-items: center;
+}
+
+.navbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 40px 20px 0;
+}
+
+.info {
+    display: grid;
+}
+
+.content {
+    display: grid;
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+th, td {
+    text-align: center;
+    padding: 16px;
+}
+
+.row {
+   background-color: rgb(255, 241, 236);
+}
+
+button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 16px;
+    background-color: rgb(219, 100, 64);
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.big_button {
+    margin-top: 32px;
+    padding: 10px 20px;
+    border: none;
+    background-color: rgb(219, 100, 64);
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.delete-container {
+    font-size: 24px;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+}
+
+.buttons-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+input[type=submit] {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 16px;
+    background-color: rgb(37, 194, 129);
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.input_form {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+}
+
+input[type=text],
+input[type=password],
+textarea {
+    border: 1px solid #757575;
+    border-radius: 5px;
+    padding: 10px;
+    max-height: 40px;
+}
+
+@media (max-width: 1280px) {
+    .container {
+        width: 90%;
+        padding: 16px;
+    }
+}
+
+
+form input {
+    border: 1px solid #757575;
+    border-radius: 5px;
+    padding: 10px;
+    font-family: 'Roboto', sans-serif;
+}
+
+form textarea {
+    border: 1px solid #757575;
+    border-radius: 5px;
+    padding: 10px;
+    font-family: 'Roboto', sans-serif;
+}
+
+form label {
+    font-weight: bold;
+    margin-bottom: 5px;
+}

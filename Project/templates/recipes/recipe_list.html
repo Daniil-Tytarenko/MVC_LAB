@@ -1,0 +1,55 @@
+{% extends 'recipes/base.html' %}
+{% block content %}
+
+
+<div class="info">
+    <div class="header">
+        <p>{{ request.user }}</p>
+        <a style="color: black;" href="{% url 'recipeList' %}"><h1>Recipe List</h1></a>
+        {% if request.user.is_authenticated %}
+            <form method="POST" action="{% url 'logout' %}">
+            {% csrf_token %}
+            <button type="submit">Logout</button>
+            </form>
+        {% else %}
+            <form method="POST" action="{% url 'login' %}">
+            {% csrf_token %}
+            <button type="submit">Logout</button>
+            </form>
+        {% endif %}
+    </div>
+    <div class="navbar">
+        <form method="GET">
+            <input type='text' name='search-area' placeholder="Search your recipe" value="{{search_input}}">
+            <input type="submit" value='Search'>
+        </form>
+    </div>
+</div>
+<div class="content">
+    <table>
+        <tr class="row">
+            <th>Cocktails:</th>
+            <th>Ingredients:</th>
+            <th>Created:</th>
+            <th></th>
+            <th></th>
+            <th></th>
+        </tr>
+        {% for Cocktail in recipes_list %}
+        <tr class="row">
+            <td>{{ Cocktail.name }}</td>
+            <td>{{ Cocktail.ingredients }}</td>
+            <td>{{ Cocktail.created_at.date }}</td>
+            <td><button><a href="{% url 'view' Cocktail.pk %}">Instructions</a></button></td>
+            <td><button><a href="{% url 'update' Cocktail.pk %}">Edit</a></button></td>
+            <td><button><a href="{% url 'delete' Cocktail.pk %}">Delete</a></button></td>
+        </tr>
+        {% empty %}
+            <h3>No Recipes saved.</h3>
+        {% endfor %}
+    </table>
+    <button class="big_button"><a href="{% url 'create' %}">Create new recipe</a></button>
+</div>
+
+
+{% endblock content %}

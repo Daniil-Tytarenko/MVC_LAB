@@ -1,0 +1,21 @@
+{% extends 'recipes/base.html' %}
+{% block content %}
+
+
+<div class="delete-container">
+    <p>Delete <b>"{{object.name}}"</b> recipe? </p>
+    <div class="buttons-container">
+        <form method="POST">
+            {% csrf_token %}
+            <input class="submit_button" type="submit" value="Delete" />
+        </form>
+        <button><a href="{% url 'recipeList' %}">Cancel</a></button>
+    </div>
+
+</div>
+
+
+{% endblock content %}
+
+
+

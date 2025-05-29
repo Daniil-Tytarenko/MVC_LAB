@@ -1,0 +1,26 @@
+{% extends 'recipes/base.html' %}
+{% block content %}
+
+
+<div>
+    <div class="header">
+        <h1>Recipe instructions:</h1>
+        <button><a href="{% url 'recipeList' %}">Cancel</a></button>
+    </div>
+
+    <table>
+        <tr class="row">
+            <th>Cocktail:</th>
+            <th>Ingredients:</th>
+            <th>Instructions:</th>
+        </tr>
+        <tr class="row">
+            <td>{{ object.name }}</td>
+            <td>{{ object.ingredients }}</td>
+            <td>{{ object.instructions }}</td>
+        </tr>
+    </table>
+</div>
+
+
+{% endblock content %}
